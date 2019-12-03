@@ -1,4 +1,4 @@
-from random import randint as 随机整数, randrange as 随机范围
+from random import randint as 随机整数, randrange as 范围随机
 
 gbk文字编码段 = [
     ((176, 247), (161, 254)),   # B0-F7, A1-FE
@@ -23,7 +23,7 @@ def 生成锟斤拷(字节长度 = 8, 包括符号 = False, 返回文字 = False
             第一位, 第二位 = gbk范围[随机整数(0,len(gbk范围)-1)]
             while True:
                 try:
-                    返回的文字 += bytes([ 随机范围(*第一位), 随机范围(*第二位)]).decode('GBK')
+                    返回的文字 += bytes([ 范围随机(*第一位), 范围随机(*第二位)]).decode('GBK')
                     break
                 except UnicodeDecodeError:
                     pass
